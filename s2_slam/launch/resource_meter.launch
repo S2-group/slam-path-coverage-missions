@@ -1,0 +1,3 @@
+<launch>
+  <node pkg="s2_slam" name="resource_meter" type="resource_meter.py" required="true"/>
+</launch>

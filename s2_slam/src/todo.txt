@@ -1,0 +1,4 @@
+TODO:
+-Quit functionality
+-Comments
+-Clean up unwanted variables etc

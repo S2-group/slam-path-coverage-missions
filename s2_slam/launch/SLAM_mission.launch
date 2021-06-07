@@ -1,0 +1,23 @@
+<launch>
+  <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
+  <arg name="configuration_basename" default="turtlebot3_lds_2d.lua"/>
+  <arg name="simulated" default="false"/>
+  <arg name="path" default="$(env PATH_TO_BAG)"/>
+  <arg name="slam_methods" default="gmapping" doc="slam type [gmapping, karto, hector]"/>
+  <arg name="st" default="false"/>
+
+  <include file="$(find turtlebot3_bringup)/launch/turtlebot3_remote.launch">
+    <arg name="model" value="$(arg model)"/>
+  </include>
+
+  <node pkg="s2_slam" type="remote_bond.py" name="remote_bond" required="true" args="$(arg path)"/>
+  <node pkg="rosbag" type="record" name="rosbag_record" args="-a -q -o /home/et/Documents/Thesis/bagfiles/runs/SLAM.bag"/>
+  <node pkg="s2_slam" type="pyshark_recorder.py" name="pyshark_recorder" required="true"/>
+
+  <group if="$(arg simulated)">
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_world.launch">
+      <arg name="model" value="$(arg model)"/>
+    </include>
+  </group>
+
+</launch>
