@@ -23,8 +23,8 @@ And the following ROS packages on your Turtlebot:
 
 In order for the python files to run correctly, you'll need to install:
 - ```pip3 install bondpy```
-- ```pip3 install pyrosbag (remote PC only)```
-- ```pip3 install psutil (turtlebot only)```
+- ```pip3 install pyrosbag``` (remote PC only)
+- ```pip3 install psutil``` (turtlebot only)
 
 Now the folders for the data collection should be created.
 
@@ -41,17 +41,21 @@ For the remote PC, here are the environment variables you should be setting in .
 - export TURTLEBOT3_MODEL=burger
 - export PATH_TO_BAG=/path/to/where/bagfile/should/be/stored/SLAM.bag
 
+![alt text](https://i.imgur.com/rAjnJcO.png)
+
 For the turtlebot, here are the environment variables you should set in .bashrc:
 - export ROS_MASTER_URI=http://[remote-pc-ip]:11311/
 - export ROS_HOSTNAME=[turtlebot-ip]
 - export TURTLEBOT3_MODEL=burger
 - sudo ntpdate -q [remote-pc-ip]
 
+![alt text](https://i.imgur.com/7P3y6IS.png)
+
 Anything ip indicated by [name] should be replaced by the actual ip of the turtlebot/remote pc.
 
 In order for the network profiler to work on the remote PC, you will also have to:
 `sudo nano /etc/hosts`
-and add the turtlebot ip to the list of known IP's with the name "turtlebot-ip" like this:
+and add the turtlebot ip to the list of known IP's with the name "turtlebot-ip" like this: <br/>
 ![alt text](https://i.imgur.com/TAjz1zJ.png)
 
 And finally, if you face time synchronization issues, you'll need to install chrony on the PC and the turtlebot:
