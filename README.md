@@ -14,17 +14,16 @@ You will also need to install the following ROS packages on your remote PC:
 - turtlebot3_simulations (if you want to simulate it in gazebo)
 
 And the following ROS packages on your Turtlebot:
-- ```bash $ sudo apt-get install ros-[version]-gmapping```
-- hector
-- karto
-- slam_toolbox
+- ```$ sudo apt-get install ros-[version]-gmapping```
+- ```$ sudo apt-get install ros-[version]-hector-slam```
+- ```$ sudo apt-get install ros-[version]-slam-karto```
+- ```$ sudo apt-get install ros-[version]-slam-toolbox```
 - turtlebot3_slam
 
 In order for the python files to run correctly, you'll need to install:
-- bondpy
-- roslaunch
-- pyrosbag (remote PC only)
-- psutil (turtlebot only)
+- ```pip3 install bondpy```
+- ```pip3 install pyrosbag (remote PC only)```
+- ```pip3 install psutil (turtlebot only)```
 
 And finally, if you face time synchronization issues, you'll need to install chrony on the PC and the turtlebot:
 ```bash
