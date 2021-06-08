@@ -3,13 +3,14 @@
   <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
   <arg name="configuration_basename" default="turtlebot3_lds_2d.lua"/>
   <arg name="slam_methods" default="gmapping" doc="slam type [gmapping, cartographer, hector]"/>
+  <arg name="path" default="$(env PATH_TO_BAG)"/>
   <arg name="simulated" default="false"/>
 
   <include file="$(find turtlebot3_bringup)/launch/turtlebot3_remote.launch">
       <arg name="model" value="$(arg model)" />
   </include>
 
-  <node pkg="rosbag" type="record" name="rosbag_record" args=" -q -O /home/et/Documents/Thesis/bagfiles/SLAM.bag /cmd_vel /odom /cmd_vel_rc100 /motor_power /rpms"/>
+  <node pkg="rosbag" type="record" name="rosbag_record" args=" -q -O $(arg path) /cmd_vel /odom /cmd_vel_rc100 /motor_power /rpms"/>
 
   <node pkg="turtlebot3_teleop" type="turtlebot3_teleop_key" name="turtlebot3_teleop_keyboard" output="screen">
   </node>
