@@ -51,7 +51,7 @@ For the turtlebot, here are the environment variables you should set in .bashrc:
 
 ![alt text](https://i.imgur.com/7P3y6IS.png)
 
-Anything ip indicated by [name] should be replaced by the actual ip of the turtlebot/remote pc. In order to retrieve the IP of both machines, use `ifconfig`
+Any ip indicated by [name] should be replaced by the actual ip of the turtlebot/remote pc. In order to retrieve the IP of both machines, use `ifconfig`
 
 In order for the network profiler to work on the remote PC, you will also have to:
 `sudo nano /etc/hosts`
