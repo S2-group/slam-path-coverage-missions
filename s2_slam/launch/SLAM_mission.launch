@@ -11,8 +11,8 @@
   </include>
 
   <node pkg="s2_slam" type="remote_bond.py" name="remote_bond" required="true" args="$(arg path)"/>
-  <node pkg="rosbag" type="record" name="rosbag_record" args="-a -q -o /home/et/Documents/Thesis/bagfiles/runs/SLAM.bag"/>
-  <node pkg="s2_slam" type="pyshark_recorder.py" name="pyshark_recorder" required="true"/>
+  <node pkg="rosbag" type="record" name="rosbag_record" args="-a -q -o $(arg path)"/>
+  <node pkg="s2_slam" type="dumpcap_recorder.py" name="dumpcap_recorder" required="true"/>
 
   <group if="$(arg simulated)">
     <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_world.launch">
