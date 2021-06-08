@@ -51,12 +51,12 @@ For the turtlebot, here are the environment variables you should set in .bashrc:
 
 ![alt text](https://i.imgur.com/7P3y6IS.png)
 
-Anything ip indicated by [name] should be replaced by the actual ip of the turtlebot/remote pc.
+Anything ip indicated by [name] should be replaced by the actual ip of the turtlebot/remote pc. In order to retrieve the IP of both machines, use `ifconfig`
 
 In order for the network profiler to work on the remote PC, you will also have to:
 `sudo nano /etc/hosts`
 and add the turtlebot ip to the list of known IP's with the name "turtlebot-ip" like this: <br/>
-![alt text](https://i.imgur.com/TAjz1zJ.png)
+![alt text](https://i.imgur.com/3igYluE.png)
 
 And finally, if you face time synchronization issues, you'll need to install chrony on the PC and the turtlebot:
 ```bash
@@ -65,11 +65,6 @@ $ sudo apt-get install chrony
 and follow this tutorial: https://answers.ros.org/question/298821/tf-timeout-with-multiple-machines/?fbclid=IwAR3k63RvLPDzuJAN2bOpsutWqLcIfxDx0074DkxehJZgAbNC29TbOw9afHE
 
 ## Running
-
--Setting environment variables (bashrc)
--Setting turtlebot-ip in /etc/hosts
--creating robot_data folders (~/robot-data on turtlebot, change the code in dumpcap for output)
--create folder for bagfiles
 -run Setup
 -run main mission
 -collect data
