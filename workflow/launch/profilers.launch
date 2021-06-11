@@ -1,5 +1,0 @@
-<launch>    
-    <node name="bag_record" pkg="rosbag" type="record" args="record -o /home/joe/catkin_ws/src/data/rosbags/ -a"/> 
-    
-    <node pkg="workflow" type="dumpcap.sh" name="dumpcap" output="screen"/>
-</launch>
