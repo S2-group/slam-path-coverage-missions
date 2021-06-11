@@ -1,0 +1,3 @@
+<launch>
+    <node pkg="set_arena" type="set_arena_node" name="set_arena_node" output="screen" />
+</launch>
