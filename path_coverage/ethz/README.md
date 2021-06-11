@@ -16,6 +16,10 @@ Follow the [Turtlebot documentation](https://emanual.robotis.com/docs/en/platfor
 * Modification of polygon_coverage_ros coverage_planner.launch
   * ...
 
+## Installation Pointers
+
+* ...
+
 ## Mission Workflow
 
 Ensure the repository is built on both the remote-pc and the turtlebot, see link above.
