@@ -7,4 +7,7 @@
 ## Time synchronisation
 
 
+## Navigation Parameters
+
+
 ## Acquiring Polygon Coordinates
