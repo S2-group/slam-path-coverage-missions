@@ -1,3 +1,0 @@
-<launch>     
-    <node pkg="boustrophedon_client" type="boustrophedon_path_receiver_node.py" name="boustrophedon_path_receiver_node" output="screen"/> 
-</launch>

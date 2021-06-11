@@ -1,6 +1,0 @@
-<launch>
-    <node pkg="workflow" type="remote_bond.py" name="remote_bond" output="screen"/>
-    
-    <!--<node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(find turtlebot3_navigation)/rviz/turtlebot3_navigation.rviz"/>    -->
-    
-</launch>
