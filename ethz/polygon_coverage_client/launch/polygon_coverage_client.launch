@@ -1,0 +1,6 @@
+<launch>              
+    <node name="robot_bond" pkg="workflow" type="robot_bond.py"/>
+    
+    <node pkg="polygon_coverage_client" name="polygon_client_node" type="polygon_client_node.py" output="screen"/>
+    
+</launch>
