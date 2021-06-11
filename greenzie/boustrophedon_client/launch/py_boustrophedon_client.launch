@@ -1,0 +1,3 @@
+<launch>              
+    <node pkg="boustrophedon_client" name="boustrophedon_client_node" type="boustrophedon_client_node.py" output="screen"/>
+</launch>

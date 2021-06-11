@@ -1,0 +1,3 @@
+<launch>               
+    <node name="resource_meter" pkg="polygon_coverage_client" type="resource_meter.py"/>
+</launch>
