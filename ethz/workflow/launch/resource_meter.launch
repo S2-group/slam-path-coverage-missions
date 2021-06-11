@@ -1,3 +1,0 @@
-<launch>       
-    <node name="resource_meter" pkg="workflow" type="resource_meter.py"/>
-</launch>
