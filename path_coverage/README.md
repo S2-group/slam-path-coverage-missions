@@ -5,3 +5,6 @@
 
 
 ## Time synchronisation
+
+
+## Acquiring Polygon Coordinates
