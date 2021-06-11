@@ -6,14 +6,9 @@ Follow the [Turtlebot documentation](https://emanual.robotis.com/docs/en/platfor
 
 ## TODO
 
-* Project Additions
 * Move bond nodes to workflow
 * Turtlebot navigation parameters
 * list of paths to change
-
-
-## Project Additions
-
 * workflow package
   * This package includes the workflow script for running sequential missions. It also includes the remote and robot bond nodes which initiate the profilers.
 * polygon_coverage_client
@@ -48,7 +43,9 @@ You will then be prompted to launch the remote-pc launch file, which launches rv
 $ roslaunch workflow remote.launch
 ```
 
-Once ready, the workflow script will prompt you to launch the client, which subsequently launches the turtlebot bond node. This acquires the path from the polygon coverage server node and sends the points to the navigation stack.
+``` remote.launch ``` starts ``` remote_bond.py ```, which waits for ``` robot_bond.py ``` to be launched, before starting the recording of rosbag and dumpcap.
 
 
-The remote-pc bond node waits for the turtlebot bond node to be active, before starting rosbag record and dumpcap. The turtlebot bond node launches the resource-meter node. In this configuration, rosbag and the network and cpu profilers are recorded from the same timestamp.
+The workflow script will prompt you to launch the client, which subsequently launches ``` robot_bond.py ```. The client sends the polygon coordinates to the server and retreives the goal coordinates, which are then parsed to the navigation stack. ``` robot_bond.py ``` launches the resource-meter node. 
+
+The bond functionality allows the rosbag and network/cpu profilers to be recorded from the same timestamp.
