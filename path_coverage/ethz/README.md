@@ -6,8 +6,6 @@ Follow the [Turtlebot documentation](https://emanual.robotis.com/docs/en/platfor
 
 ## TODO
 
-* Move bond nodes to workflow
-* Turtlebot navigation parameters
 * list of paths to change
 * workflow package
   * This package includes the workflow script for running sequential missions. It also includes the remote and robot bond nodes which initiate the profilers.
