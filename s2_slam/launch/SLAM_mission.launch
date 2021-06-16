@@ -3,8 +3,6 @@
   <arg name="configuration_basename" default="turtlebot3_lds_2d.lua"/>
   <arg name="simulated" default="false"/>
   <arg name="path" default="$(env PATH_TO_BAG)"/>
-  <arg name="slam_methods" default="gmapping" doc="slam type [gmapping, karto, hector]"/>
-  <arg name="st" default="false"/>
 
   <include file="$(find turtlebot3_bringup)/launch/turtlebot3_remote.launch">
     <arg name="model" value="$(arg model)"/>
