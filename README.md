@@ -133,6 +133,8 @@ Now you can start the arduino power meter by pressing the button. (WARNING: make
 Then press enter on the turtlebot controller first, wait until the terminal says "Calibration end". After that you can press enter on the remote PC.  <br/>
 ![alt text](https://i.imgur.com/YKBv5MN.png)
 
+At the end of a mission, press Enter on both terminals to stop execution.
+
 For all mission executions, remember to allow the robot_SLAM_controller to reach "Calibration end" before starting the remote_SLAM_controller mission execution.
 
 In order to retrieve data files off the robot after all missions have executed, run:
