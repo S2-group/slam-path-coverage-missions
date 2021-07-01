@@ -25,6 +25,7 @@ In order for the python files to run correctly, you'll need to install:
 - ```pip3 install bondpy```
 - ```pip3 install pyrosbag``` (remote PC only)
 - ```pip3 install psutil``` (turtlebot only)
+- ```pip3 install defusedxml``` (turtlebot only)
 
 Now the folders for the data collection should be created.
 
@@ -64,7 +65,18 @@ $ sudo apt-get install chrony
 ```
 and follow this tutorial: https://answers.ros.org/question/298821/tf-timeout-with-multiple-machines/?fbclid=IwAR3k63RvLPDzuJAN2bOpsutWqLcIfxDx0074DkxehJZgAbNC29TbOw9afHE
 
+In order to run the missions, you will also have to create a catkin workspace. To do this, simply open a directory of your choice and run:
+`mkdir -p catkin_ws/src`
+
+After this, place the s2_slam package into the src folder. Once you've done this, run:
+`cd /.../catkin_ws
+source /opt/ros/noetic/setup.bash
+catkin_make`
+
+A build and devel folder should be generated within the catkin_ws folder.
+
 ## Running
+
 -run Setup
 -run main mission
 -collect data
