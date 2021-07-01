@@ -8,27 +8,27 @@ if os.name == 'nt':
 else:
   import tty, termios
 
-#GMAPPING = 1
-#HECTOR = 2
-#SLAM_TOOLBOX = 3
-#KARTO = 4
-
 def setMissionIterations():
     mIterations = ""
+    #checks if input is integer
     while(isinstance(mIterations, int)) is False:
         try:
             print("\x1b[0;33mEnter the number of missions you want to execute: \x1b[0;37m")
             mIterations = int(input())
         except:
+            #throws error if not integer, loop repeats
             print("\x1b[1;31mInvalid input - Must be integer")
 
     return mIterations
 
 def launchSlamMission(lFilePath):
     try:
+        #generate UUID for launch file
         uuid = roslaunch.rlutil.get_or_generate_uuid(None, False)
         roslaunch.configure_logging(uuid)
+        #set launch file to run
         parent = roslaunch.parent.ROSLaunchParent(uuid, [lFilePath])
+        #start launch file
         parent.start()
 
     except:
@@ -44,35 +44,25 @@ def waitForUser(currentMission):
     print("\n\x1b[1;92mPress Enter key to begin mission {}".format(currentMission))
     input()
 
-#def slamInputCheck(input):
-#    return(input==GMAPPING or input == HECTOR or input == SLAM_TOOLBOX or input == KARTO)
-
-#def pollSLAMAlgorithm():
-#    validInput = None
-#    while(not slamInputCheck(validInput)):
-#        try:
-#            print("\n\x1b[0;33mPlease select the SLAM Algorithm (1 = gmapping, 2 = hector, 3 = slam_toolbox), 4 = karto: \x1b[0;37m")
-#            validInput = int(input())
-#            if(not slamInputCheck(validInput)):
-#                print("\n\x1b[1;31mPlease select 1, 2, 3 or 4")
-#        except:
-#            print("\n\x1b[1;31mPlease select 1, 2, 3 or 4")
-#
-#    return validInput
-
 if __name__=="__main__":
     test = 'true'
 
     if os.name != 'nt':
         settings = termios.tcgetattr(sys.stdin)
-
+    #initializes node
     rospy.init_node('mission_control')
 
+    #retrieves iterations from user
     mIterations = setMissionIterations()
+    #retrieves SLAM_mission.launch file path from user
     lFilePath = retrievePath()
 
+    #iterates through all the missions
     for x in range(mIterations):
+        #polls for enter input to stall until mission execution, x+1 = current mission number
         waitForUser(x+1)
+        #launches mission
         launchSlamMission(lFilePath)
+        #wait until use presses enter to stop mission
         input()
         print("\n\x1b[1;92mMission {} complete".format(x+1))
