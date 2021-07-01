@@ -134,3 +134,9 @@ Then press enter on the turtlebot controller first, wait until the terminal says
 ![alt text](https://i.imgur.com/YKBv5MN.png)
 
 For all mission executions, remember to allow the robot_SLAM_controller to reach "Calibration end" before starting the remote_SLAM_controller mission execution.
+
+In order to retrieve data files off the robot after all missions have executed, run:
+```bash
+$ sudo is_shutdown
+```
+on the turtlebot. Once it is fully shutdown (ssh disconnects), it is safe to power off the robot with the switch and remove the SD to retrieve the files manually on the remote PC. 
