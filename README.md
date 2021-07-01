@@ -137,6 +137,6 @@ For all mission executions, remember to allow the robot_SLAM_controller to reach
 
 In order to retrieve data files off the robot after all missions have executed, run:
 ```bash
-$ sudo is_shutdown
+$ sudo shutdown
 ```
-on the turtlebot. Once it is fully shutdown (ssh disconnects), it is safe to power off the robot with the switch and remove the SD to retrieve the files manually on the remote PC. 
+on the turtlebot. Once it is fully shutdown (ssh disconnects), it is safe to power off the robot with the switch and remove the SD to retrieve the files manually on the remote PC.
