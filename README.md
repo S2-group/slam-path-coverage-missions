@@ -67,13 +67,15 @@ and follow this tutorial: https://answers.ros.org/question/298821/tf-timeout-wit
 
 In order to run the missions, you will also have to create a catkin workspace. To do this, simply open a directory of your choice and run: <br/>
 ```bash
- mkdir -p catkin_ws/src```
+ mkdir -p catkin_ws/src
+ ```
 
 After this, place the s2_slam package into the src folder. Once you've done this, run: <br/>
 ```bash
 $ cd /.../catkin_ws
 $ source /opt/ros/noetic/setup.bash
-$ catkin_make```
+$ catkin_make
+```
 
 A build and devel folder should be generated within the catkin_ws folder.
 
