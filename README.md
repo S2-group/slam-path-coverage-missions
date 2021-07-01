@@ -67,7 +67,7 @@ and follow this tutorial: https://answers.ros.org/question/298821/tf-timeout-wit
 
 In order to run the missions, you will also have to create a catkin workspace. To do this, simply open a directory of your choice and run: <br/>
 ```bash
- mkdir -p catkin_ws/src
+ $ mkdir -p catkin_ws/src
  ```
 
 After this, place the s2_slam package into the src folder. Once you've done this, run: <br/>
@@ -78,10 +78,59 @@ $ catkin_make
 ```
 
 A build and devel folder should be generated within the catkin_ws folder.
+Do this on both the remote PC and the turtlebot.
 
 ## Running
 
--run Setup
--run main mission
--collect data
--arduino?
+First you need to source ROS on the remote PC to run roscore: <br/>
+```bash
+$ source /opt/ros/noetic/setup.bash
+$ roscore
+```
+
+Now turn on the turtlebot and open a terminal to ssh into it:
+```bash
+$ ssh ubuntu@turtlebot-ip
+```
+
+Once connected, source the workspace on the remote PC:
+```bash
+$ source /path/to/catkin_ws/devel/setup.bash
+```
+
+Source the ROS environment on the turtlebot to run turtlebot3_robot.launch:
+```bash
+$ source /opt/ros/noetic/setup.bash
+$ roslaunch turtlebot3_bringup turtlebot3_robot.launch
+```
+
+Now you can run the setup launch file on the remote PC:
+```bash
+$ roslaunch s2_slam SLAM_mission_setup.launch
+```
+
+With this running, you can teleoperate the robot to record the path it will take. Once the map on RVIZ is complete, you can kill the running nodes on the remote PC to stop recording to the bag file.
+
+Next you should source the catkin_ws workspace on the turtlebot:
+```bash
+$ source /path/to/catkin_ws/devel/setup.bash
+```
+
+Now you can run the mission controller on the remote PC:
+```bash
+$ rosrun s2_slam remote_SLAM_controller.py
+```
+and on the robot:
+```bash
+$ rosrun s2_slam robot_SLAM_controller.py
+```
+
+Once both running, fill in all fields polled by the programs. Once you've done this, both terminals should say "Press enter key to begin mission 1" <br/>
+![alt text](https://i.imgur.com/1cmvOLS.png)
+
+Now you can start the arduino power meter by pressing the button. (WARNING: make sure to plug the arduino into the turtlebot after turning it on, as it can get confused about the arduino and try to use the port it is connected to in order to communicate with the OpenCR board)
+
+Then press enter on the turtlebot controller first, wait until the terminal says "Calibration end". After that you can press enter on the remote PC.  <br/>
+![alt text](https://i.imgur.com/YKBv5MN.png)
+
+For all mission executions, remember to allow the robot_SLAM_controller to reach "Calibration end" before starting the remote_SLAM_controller mission execution.
