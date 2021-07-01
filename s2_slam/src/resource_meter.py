@@ -12,10 +12,10 @@ def resource_writer():
     #retrieve time for filename
     now = str(time.time())
     #create filename
-    path = '/home/ubuntu/Robot_Data/test-' + now + '.csv'
+    path = '/home/ubuntu/Robot_Data/resources-' + now + '.csv'
     #open csvfile
     with open(path, 'w', newline='', encoding='utf-8') as csvfile:
-        rospy.init_node('memory_writer', anonymous=True)
+        rospy.init_node('resource_writer', anonymous=True)
         cpu = 0
         #get csvfile ready to write
         csvwriter = csv.writer(csvfile)
