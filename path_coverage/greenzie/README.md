@@ -45,6 +45,15 @@ The workflow script will prompt you to launch the client, which subsequently lau
 
 The bond functionality allows the rosbag and network/cpu profilers to be recorded from the same timestamp.
 
+
+## Workflow Timeline
+
+![workflow](https://user-images.githubusercontent.com/22135172/126071268-4b75f676-e686-4ac9-abd7-10e3ced08e96.png)
+
+## Workflow Screenshot
+
+![greenzie_workflow](https://user-images.githubusercontent.com/22135172/126071322-c59cea1e-efa1-4602-8f1f-d84b8daf7d83.png)
+
 ## Paths to change
 
 * boustrophedon_client/scripts/boustrophedon_client_node.py
@@ -62,14 +71,5 @@ The bond functionality allows the rosbag and network/cpu profilers to be recorde
   * Path to desired directory of psutil data
 * workflow/scripts/robot_bond.py
   * Path to resource_meter.launch
-
-## Workflow Timeline
-
-![workflow](https://user-images.githubusercontent.com/22135172/126071268-4b75f676-e686-4ac9-abd7-10e3ced08e96.png)
-
-## Workflow Screenshot
-
-![greenzie_workflow](https://user-images.githubusercontent.com/22135172/126071322-c59cea1e-efa1-4602-8f1f-d84b8daf7d83.png)
-
 
 
