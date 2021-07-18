@@ -2,12 +2,15 @@
 
 Configuration of [Greenzie's Boustrophedon Planner](https://github.com/Greenzie/boustrophedon_planner) package for usage with a Turtlebot. See the original repo for installation and licencing.
 
-## TODO
+## boustrophedon_client
 
-* boustrophedon_client
-  * client
-  * path receiver node
+The polygon_coverage_client package was implemented to handle the communication between the server node, which determines the coverage path, and the Turtlebot3. In the case of the Greenzie planner, the client functionality was split into two nodes: boustrophedon_client_node and boustrophedon_path_receiver_node. 
 
+The boustrophedon_client_node reads the polygon’s x and y coordinate values from the text files created by the set_polygon node. The client then waits for the planner’s server service to become available, before sending the polygon coordinates to the server. Given the request was successful, the server returns the path points in a sequential fashion to the boustrophedon_path_receiver_node which then feeds each point to the Turtlebot3's navigation stack. 
+
+## boustrophedon_server
+
+See the [original repo](https://github.com/Greenzie/boustrophedon_planner) for the boustrophedon_server package. For this project, only the launch file was altered. It can be found at boustrophedon_server/launch/boustrophedon_server.launch.
 
 ## Mission Workflow
 
@@ -58,6 +61,8 @@ The bond functionality allows the rosbag and network/cpu profilers to be recorde
 
 * boustrophedon_client/scripts/boustrophedon_client_node.py
   * Path to x & y coordinates in parseValues method
+* boustrophedon_server/boustrophedon_server.launch
+  * Path to arena
 * workflow/launch/profilers.launch
   * Path to desired directory of collected rosbags
 * workflow/scripts/dumpcap.sh
