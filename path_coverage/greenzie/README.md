@@ -4,15 +4,14 @@ Configuration of [Greenzie's Boustrophedon Planner](https://github.com/Greenzie/
 
 ## TODO
 
-* list of paths to change
-* workflow package
-  * This package includes the workflow script for running sequential missions. It also includes the remote and robot bond nodes which initiate the profilers.
 * boustrophedon_client
   * client
   * path receiver node
 
 
 ## Mission Workflow
+
+The workflow ROS package was made to provide a consistent mission execution process for both path coverage algorithms. The package includes a workflow script for running sequential missions, along with remote and robot bond nodes which initiate the data profilers (psutil, dumpcap etc.).
 
 Ensure the repository is built on both the remote-pc and the turtlebot, see link above.
 
@@ -46,6 +45,31 @@ The workflow script will prompt you to launch the client, which subsequently lau
 
 The bond functionality allows the rosbag and network/cpu profilers to be recorded from the same timestamp.
 
+## Paths to change
+
+* boustrophedon_client/scripts/boustrophedon_client_node.py
+  * Path to x & y coordinates in parseValues method
+* workflow/launch/profilers.launch
+  * Path to desired directory of collected rosbags
+* workflow/scripts/dumpcap.sh
+  * Path to desired directory of collected dumpcap data
+* workflow/scripts/greenzie_turtlebot.py
+  * Path to mission_status file (records success/failure of mission)
+  * Paths to client and server shell scripts
+* workflow/scripts/remote_bond.py
+  * Path to profilers.launch
+* workflow/scripts/resource_meter.py
+  * Path to desired directory of psutil data
+* workflow/scripts/robot_bond.py
+  * Path to resource_meter.launch
+
+## Workflow Timeline
+
+![workflow](https://user-images.githubusercontent.com/22135172/126071268-4b75f676-e686-4ac9-abd7-10e3ced08e96.png)
+
+## Workflow Screenshot
+
+![greenzie_workflow](https://user-images.githubusercontent.com/22135172/126071322-c59cea1e-efa1-4602-8f1f-d84b8daf7d83.png)
 
 
 
