@@ -45,6 +45,15 @@ The workflow script will prompt you to launch the client, which subsequently lau
 
 The bond functionality allows the rosbag and network/cpu profilers to be recorded from the same timestamp.
 
+
+## Workflow Timeline
+
+![workflow](https://user-images.githubusercontent.com/22135172/126071268-4b75f676-e686-4ac9-abd7-10e3ced08e96.png)
+
+## Workflow Screenshot
+
+![ethz_workflow](https://user-images.githubusercontent.com/22135172/126071299-95f3c2f5-f32b-4e45-8265-2df9b5137a8c.png)
+
 ## Paths to change
 
 * polygon_coverage_client/scripts/polygon_client_node.py
@@ -62,12 +71,3 @@ The bond functionality allows the rosbag and network/cpu profilers to be recorde
   * Path to desired directory of psutil data
 * workflow/scripts/robot_bond.py
   * Path to resource_meter.launch
-
-## Workflow Timeline
-
-![workflow](https://user-images.githubusercontent.com/22135172/126071268-4b75f676-e686-4ac9-abd7-10e3ced08e96.png)
-
-## Workflow Screenshot
-
-![ethz_workflow](https://user-images.githubusercontent.com/22135172/126071299-95f3c2f5-f32b-4e45-8265-2df9b5137a8c.png)
-
