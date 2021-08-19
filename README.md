@@ -6,4 +6,4 @@ SLAM basically consists on constructing maps of unknown environments or update e
 
 ## Coverage Path Planning (CPP) 
 
-CPP is the taks that defines a path to cover all points of an area. This is the case for automated lawn mowers and vacuum robots. Are you interested on running this with ROS? Then, check our [experiment setup](https://github.com/S2-group/slam-path-coverage-missions/tree/path-coverage/path_coverage).
+CPP is the task that defines a path to cover all points of an area. This is the case for automated lawnmowers and vacuum robots. Are you interested in running this with ROS? Then, check our [experiment setup](https://github.com/S2-group/slam-path-coverage-missions/tree/path-coverage/path_coverage).
