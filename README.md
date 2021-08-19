@@ -1,4 +1,4 @@
-# ROS for SLAM and Path Coverage
+# ROS + SLAM/Path Coverage
 
 ## Simultaneous Localization and Mapping (SLAM)
 
